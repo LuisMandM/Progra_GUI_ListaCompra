@@ -21,12 +21,10 @@ public class V_Compra {
                 Item actual = null;
                 if (unidades_textField.getText().equals("")) {
                     actual = new Item(producto_textField.getText(), 0);
-                    //modelo.addElement(actual);
                 } else {
                     try {
                         int unidades = Integer.parseInt(unidades_textField.getText());
                         actual = new Item(producto_textField.getText(), unidades);
-                        //modelo.addElement(actual);
                     } catch (NumberFormatException ex) {
                         JOptionPane.showMessageDialog(null, "Tipo de dato ingresado en las " +
                                         "unidades es incorrecto intente nuevamente.", "Error"
@@ -63,6 +61,7 @@ public class V_Compra {
                     , JOptionPane.ERROR_MESSAGE);
 
         });
+
         delete_Button.addActionListener(e -> {
             int indice = compra_Vlist.getSelectedIndex();
             if (indice != -1) modelo.remove(indice);
